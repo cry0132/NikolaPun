@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: rgb(231, 13, 13);
+	color: white;
+	
+}
+
+.navbar .logo img {
+	margin: 0;
+	height: 40px;
+	width: 50;
+	
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin-left: 2rem;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+
+}
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	
+}
+
+.menu-toggle span {
+	background-color: white;
+	height: 3px;
+	width: 30px;
+	margin: 4px 0;
+	transition: 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		background-color:white;
+	}
+
+	.nav-links.active {
+		display: flex;
+	}
+
+	.nav-links li {
+		margin: 0;
+		text-align: center;
+		padding: 1rem;
+		
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+}
+
+
+.ul {
+	display: flex;
+	justify-content: none;
+	color: black;
+	padding: 0px 0px;
+	text-decoration: none;
+	text-align: center;
+	margin: 0px;
+}
+
+.ul li{
+list-style: none;
+}
+
+.ul li a{
+	margin-left: 15px;
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.contact-info {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .contact-form {
+        margin-top: 20px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d0d5df;
+}
+
+footer {
+    background-color: #f8f8f8;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-info,
+.footer-social,
+.footer-newsletter {
+    margin-bottom: 15px;
+}
+
+.footer-info h3,
+.footer-social h3,
+.footer-newsletter h3 {
+    margin-bottom: 10px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: rgb(241, 18, 18);
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3b9240;
+}
+
+.response-message {
+    margin-top: 10px;
+    color: #000000; /* Gold color for success message */
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .footer-newsletter {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Gallery/foto6.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="index.html.html">About Me</a>
+                </li>
+                <li><a href="index.html2.html">Gallery</a>
+                </li>
+                <li><a href="index.html1.html">Contact</a>
+                </li>
+            </ul>
+           <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2>MENGHUBUNGI</h2>
+                <p>Jika anda memiliki pertanyaan atau masalah,jangan ragu untuk menghubungi kami menggunakan informasi kontak atau form dibawah ini.</p>
+                <h3>INFORMASI KONTAK</h3>
+                <p><strong>Email:</strong> nikolaaditya0@gmail.com</p>
+                <p><strong>Nomer:</strong> 0878 2727 1580</p> 
+                <p><strong>Alamat:</strong> Kendalrejo,Petarukan,Pemalang,Jawa Tengah</p>
+            </div>
+                <br>
+            <form class="contact-form">
+                <h3>Contact Form</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: nikolaaditya0@gmail.com</p>
+                    <p>Phone: +62 878 2727 1580 </p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3> 
+                    <a href="https://www.tiktok.com/@mars.maxsy?_t=8oTrsPdlXuc&_r=1" class="social-icon"><img src="Gallery/tiktok.png" alt="" width="50px"></a>
+                    <a href="https://youtube.com/@bglptrniko9111?si=qfb42Y5vHIMPNx8p" class="social-icon"><img src="Gallery/youtube.png" alt="" width="60px" height="60"></a>
+                    <a href="https://www.instagram.com/nikry.12?igsh=MTIzdWY4ZThtMTV4cw==" class="social-icon"><img src="Gallery/instagram.png" alt="" width="60"></a>
+                    <a href="https://github.com/cry0132" class="social-icon"><img src="Gallery/github.png" alt="" width="55px"></a>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm" onsubmit="subscribe(event)">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                    <div id="subscriptionMessage" class="response-message"></div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+function subscribe(event) {
+    event.preventDefault(); // Mencegah pengiriman form secara default
+
+    const email = document.getElementById('email').value;
+
+    // Tampilkan pesan sukses
+    const subscriptionMessage = document.getElementById('subscriptionMessage');
+    subscriptionMessage.innerText = `Thank you for subscribing, ${email}!`;
+    subscriptionMessage.style.display = 'block';
+
+    // Reset form
+    document.getElementById('newsletterForm').reset();
+
+    // Sembunyikan pesan setelah 3 detik
+    setTimeout(() => {
+        subscriptionMessage.style.display = 'none';
+    }, 3000);
+}
+</script>
+
+</body>
+</html>

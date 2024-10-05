@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+       
+       .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: rgb(231, 13, 13);
+	color: white;
+	
+}
+
+.navbar .logo img {
+	margin: 0;
+	height: 40px;
+	width: 50;
+	
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin-left: 2rem;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+
+}
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	
+}
+
+.menu-toggle span {
+	background-color: white;
+	height: 3px;
+	width: 30px;
+	margin: 4px 0;
+	transition: 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		background-color:white;
+	}
+
+	.nav-links.active {
+		display: flex;
+	}
+
+	.nav-links li {
+		margin: 0;
+		text-align: center;
+		padding: 1rem;
+		
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+}
+
+
+.ul {
+	display: flex;
+	justify-content: none;
+	color: black;
+	padding: 0px 0px;
+	text-decoration: none;
+	text-align: center;
+	margin: 0px;
+}
+
+.ul li{
+list-style: none;
+}
+
+.ul li a{
+	margin-left: 15px;
+
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-me img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-me h2 {
+            font-size: 2rem;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .about-me p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 700px;
+        }
+
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .about-me {
+                flex-direction: column;
+            }
+
+            .skills {
+                flex-direction: column;
+            }
+        }
+
+        #name-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s forwards;
+}
+
+#name-animation {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#name-animation.animate {
+    animation: fadeInUp 2.5s forwards;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Gallery/foto6.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="index.html.html">About Me</a>
+                </li>
+                <li><a href="index.html2.html">Gallery</a>
+                </li>
+                <li><a href="index.html1.html">Contact</a>
+                </li>
+            </ul>
+           <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+   
+
+    
+    <div class="container">
+        <section class="about-me">
+            <img src="Gallery saya/fotoniko.jpg" alt="Foto Profil">
+            <h2 id="name-animation">Nicola Aditya Putra</h2>
+            <p id="name-animation">Saya adalah seorang web developer dengan pengalaman dalam membangun situs web responsif dan interaktif. Saya suka belajar teknologi baru dan memecahkan masalah kompleks menggunakan keterampilan pengembangan web saya. Dalam waktu luang saya, saya juga menikmati membaca buku dan menulis kode untuk proyek-proyek pribadi.</p>
+        </section>
+    
+        <section class="skills">
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Saya memiliki keahlian dalam HTML, CSS, JavaScript, dan framework seperti React dan Vue.js.</p>
+            </div>
+            <div class="skill-card">
+                <h3>UI/UX Design</h3>
+                <p>Saya merancang antarmuka yang intuitif dan mudah digunakan dengan fokus pada pengalaman pengguna yang positif.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Saya ahli dalam menganalisis masalah kompleks dan menemukan solusi kreatif menggunakan teknologi terbaru.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cyber Security</h3>
+                <p>Saya ahli dalam mengamankan akun dan data data seseorang melalui aplikasi yang saya telah buat.</p>
+            </div>
+        </section>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 Nicola RPL</p>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const name = document.getElementById('name-animation');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                name.classList.add('animate');
+            }
+        });
+    });
+    observer.observe(name);
+});
+
+    </script>
+
+</body>
+</html>

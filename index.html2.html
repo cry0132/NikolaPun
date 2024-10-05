@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.gallery {
+    padding: 20px 0;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-item {
+        margin: 5px;
+    }
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: rgb(231, 13, 13);
+	color: white;
+	
+}
+
+.navbar .logo img {
+	margin: 0;
+	height: 40px;
+	width: 50;
+	
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin-left: 2rem;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+
+}
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	
+}
+
+.menu-toggle span {
+	background-color: white;
+	height: 3px;
+	width: 30px;
+	margin: 4px 0;
+	transition: 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.nav-links {
+		display: none;
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		background-color:white;
+	}
+
+	.nav-links.active {
+		display: flex;
+	}
+
+	.nav-links li {
+		margin: 0;
+		text-align: center;
+		padding: 1rem;
+		
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+}
+
+
+.ul {
+	display: flex;
+	justify-content: none;
+	color: black;
+	padding: 0px 0px;
+	text-decoration: none;
+	text-align: center;
+	margin: 0px;
+}
+
+.ul li{
+list-style: none;
+}
+
+.ul li a{
+	margin-left: 15px;
+
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    min-width: 200px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    height: auto;
+    border-radius: 8px;
+}
+
+.scroll-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#nama-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 4.0s forwards;
+}
+
+#nama-animation {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#nama-animation.animate {
+    animation: fadeInUp 2.5s forwards;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Gallery/foto6.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="index.html.html">About Me</a>
+                </li>
+                <li><a href="index.html2.html">Gallery</a>
+                </li>
+                <li><a href="index.html1.html">Contact</a>
+                </li>
+            </ul>
+           <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="gallery">
+        <button class="scroll-btn left" onclick="scrollGallery(-1)">&#10094;</button>
+        <div class="gallery-container">
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/fotoniko.jpg')">
+                <img src="Gallery saya/fotoniko.jpg" alt="Gallery Image 1" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/fotonikola.jpg')">
+                <img src="Gallery saya/fotonikola.jpg" alt="Gallery Image 2" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/fotoputra.jpg')">
+                <img src="Gallery saya/fotoputra.jpg" alt="Gallery Image 3" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto2.jpg')">
+                <img src="Gallery saya/foto2.jpg" alt="Gallery Image 4" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto4.jpg')">
+                <img src="Gallery saya/foto4.jpg" alt="Gallery Image 5" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto5.jpg')">
+                <img src="Gallery saya/foto5.jpg" alt="Gallery Image 6" width="300px">
+            </div>
+
+        </div>
+        <button class="scroll-btn right" onclick="scrollGallery(1)">&#10095;</button>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
+    </div>
+
+
+    <section class="gallery" id="nama-animation">
+        <div class="container">
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto6.jpg')">
+                <img src="Gallery saya/foto6.jpg" alt="Gallery Image 1" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto7.jpg')">
+                <img src="Gallery saya/foto7.jpg" alt="Gallery Image 2" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto8.jpg')">
+                <img src="Gallery saya/foto8.jpg" alt="Gallery Image 3" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto9.jpg')">
+                <img src="Gallery saya/foto9.jpg" alt="Gallery Image 4" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto1.jpeg')">
+                <img src="Gallery saya/foto1.jpeg" alt="Gallery Image 5" width="300px">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Gallery saya/foto3.jpg')">
+                <img src="Gallery saya/foto3.jpg" alt="Gallery Image 6" width="300px">
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nicola RPL</p>
+        </div>
+    </footer>
+
+    <script>
+       function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightbox.style.display = 'flex';
+    lightboxImg.src = imageSrc;
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+}
+
+function scrollGallery(direction) {
+    const gallery = document.querySelector('.gallery-container');
+    const scrollAmount = 300;
+    gallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+    </script>
+</body>
+</html>
